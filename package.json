@@ -10,7 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.2.3"
+    "astro": "^2.2.3",
+    "simple-icons": "^8.10.0"
   },
   "devDependencies": {
     "typescript": "^5.0.4"
