@@ -1,25 +1,25 @@
 ---
-title: Portfolio Website
+title: Portfolio Website with Astro
 publishDate: 2023-04-21 00:00:00
 img: /assets/stock-3.jpg
 img_alt: A glimpse of the FOSS webpage
 description: |
-  Mini project for Sceptix recruitment
+  Sabrina Hehar's Portfolio Website
 tags:
-  - FOSS
+  - Portfolio
   - Web Dev
-  - Front-end
+  - Astro
 ---
 
 ### Project Description
 
-A single-page website for Free and Open Source Software (FOSS) using HTML and CSS. The website provides an insight on the following topics:
+Created a portfolio website with Astro, a JavaScript Framework. Some of the benefits of using Astro in comparison to other frameworks are as follows:
 
-- What FOSS is
-- It's benefits over proprietary software
-- History of its development
-- FOSS alternatives to common applications
-- Its ties with GNU/Linux
+- Content-focused: Astro is designed for content-rich websites.
+- Server-first: Websites run faster when they render HTML on the server.
+- Fast by default: It is impossible to build a slow website with Astro.
+- Easy to use: You do not need to be an expert to build something with Astro.
+- Fully-featured and flexible: More than a hundred Astro integrations to choose from.
 
 <br>
 
