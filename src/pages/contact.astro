@@ -1,134 +1,39 @@
 ---
+import { getCollection } from 'astro:content';
+
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+
+import PortfolioPreview from '../components/PortfolioPreview.astro';
 import Hero from '../components/Hero.astro';
+import Grid from '../components/Grid.astro';
+
+const projects = (await getCollection('work')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
 ---
 
-<BaseLayout title="Contact | Sabrina Hehar" description="Contact Sabrina Hehar">
+<BaseLayout
+	title="My Projects | Sabrina Hehar"
+	description="Learn about Sabrina Hehar's projects"
+>
 	<div class="stack gap-20">
-		<main class="wrapper about">
+		<main class="wrapper stack gap-8">
 			<Hero
-				title="Contact"
-				tagline="Let's connect."
-			>
-			</Hero>
-
-			<section>
-				<h2 class="section-title">&#128218; Education</h2>
-				<div class="content">
-					<ul>
-						<li><b>Bachelor of Engineering in Computer Science and Engineering</b> (2022 - present)
-							<br><br>
-							<i><a href="https://www.sjec.ac.in/">St Joseph Engineering College</a></i>
-							<br>Vamanjoor, Mangalore
+				title="My Projects"
+				tagline="View some of my recent projects below."
+				align="center"
+			/>
+			<Grid variant="offset">
+				{
+					projects.map((project) => (
+						<li>
+							<PortfolioPreview project={project} />
 						</li>
-						<br><br>
-						<li><b>Higher Secondary School</b> (2020 - 2022)
-							<br><br>
-							<i><a href="https://www.apsmumbai.com/">Army Public School</a></i>
-							<br>Colaba, Mumbai
-						</li>
-						<br><br>
-						<li><b>Secondary School</b> (2014 - 2020)
-							<br><br>
-							<i><a href="https://sttheresasicse.org/">St Theresa's School</a></i>
-							<br>Bendur, Mangalore
-						</li>
-					</ul>
-
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">&#127941; Achievements</h2>
-				<div class="content">
-					<ul>
-						<li><b>Runner-up in Web Ally</b><br> (March 2023)
-							<br>
-							<br><i>Tiara 2023, National Techno-Cultural Fest</i>
-							<br>SJEC, Mangalore
-						</li>
-						<br><br>
-						<li><b>Top 10 Consistent Participant in SJEC 30 Days of Code</b><br> (December 2022 - January 2023)
-							<br>
-							<br><i>SJEC-30-DAYS-OF-CODE</i>
-							<br>SJEC, Mangalore
-						</li>
-						
-					</ul>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">&#128519; Hobbies</h2>
-				<div class="content">
-					<ul>
-						<li>Coding</li>
-						<br>
-						<li>Listening to music and playing various musical instruments</li>
-						<br>
-						<li>Sports</li>
-						<br>
-						<li>Drama</li>
-					</ul>
-				</div>
-			</section>
+					))
+				}
+			</Grid>
+			
 		</main>
 	</div>
 </BaseLayout>
-
-<style>
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
-
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
-
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
-
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
-
-	.content {
-		grid-column: 2 / 4;
-	}
-
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
-
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
-
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 55% 1fr;
-		}
-
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
-
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
-	}
-</style>
