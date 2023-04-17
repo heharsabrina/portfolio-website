@@ -14,26 +14,126 @@ const projects = (await getCollection('work')).sort(
 ---
 
 <BaseLayout
-	title="My Projects | Sabrina Hehar"
-	description="Learn about Sabrina Hehar's projects"
+	title="Contact | Sabrina Hehar"
+	description="Contact Sabrina Hehar"
 >
 	<div class="stack gap-20">
 		<main class="wrapper stack gap-8">
 			<Hero
-				title="My Projects"
-				tagline="View some of my recent projects below."
+				title="Contact"
+				tagline="Let's connect."
 				align="center"
-			/>
-			<Grid variant="offset">
-				{
-					projects.map((project) => (
-						<li>
-							<PortfolioPreview project={project} />
-						</li>
-					))
-				}
-			</Grid>
-			
+			/>		
 		</main>
 	</div>
+
+    <form
+		target='_blank'
+      	action='https://formsubmit.co/9f2e38d7a97aa8e4fad043b4b83b9558'
+      	method='POST'
+    >
+
+    <div>
+        <label html-for='name-field'>
+        	Your Name
+            <div id='name-field'>
+              <input type='text' name='name' class='w-full input input-bordered' placeholder='e.g. Godric Gryffindor' required />
+            </div>
+        </label>
+    </div>
+	<br>
+    <div>
+        <label html-for='email-field'>
+            Your Email
+            <div id='email-field'>
+              	<input
+                	type='email'
+                	name='email'
+                	class='w-full input input-bordered'
+                	placeholder='e.g. gryffindor@gmail.com'
+                	required
+              	/>
+            </div>
+          </label>
+        </div>
+	<br>
+      <div>
+        <label html-for='subject-field'>
+          	Subject
+          	<div id='subject-field'>
+            	<input
+              	type='text'
+              	name='_subject'
+              	class='w-full input input-bordered'
+              	placeholder={`e.g. Let's Connect!`}
+              	required
+            	/>
+          	</div>
+        </label>
+      </div>
+	  <br>
+      <div>
+        <label html-for='message-field'>
+          Message
+          <div id='message-field'>
+            <textarea
+              placeholder='Enter a message for Sabrina Hehar'
+              name='message'
+              rows={4}
+              required></textarea>
+          </div>
+        </label>
+      </div>
+	  
+      <div>
+        <button type='submit'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            class='icon icon-tabler icon-tabler-send'
+            width='20'
+            height='20'
+            viewBox='0 0 24 24'
+            stroke-width='2'
+            stroke='currentColor'
+            fill='none'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+          >
+            <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+            <line x1='10' y1='14' x2='21' y2='3'></line>
+            <path d='M21 3l-6.5 18a0.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a0.55 .55 0 0 1 0 -1l18 -6.5'></path>
+          </svg> Send
+        </button>
+        <button type='reset' class='gap-1 btn text-slate-300'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            class='icon icon-tabler icon-tabler-eraser'
+            width='20'
+            height='20'
+            viewBox='0 0 24 24'
+            stroke-width='2'
+            stroke='currentColor'
+            fill='none'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+          >
+            <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+            <path d='M19 19h-11l-4 -4a1 1 0 0 1 0 -1.41l10 -10a1 1 0 0 1 1.41 0l5 5a1 1 0 0 1 0 1.41l-9 9'></path>
+            <line x1='18' y1='12.3' x2='11.7' y2='6'></line>
+          </svg> Clear
+        </button>
+      </div>
+    </form>
+
+	<p>Via platforms</p>
+	
 </BaseLayout>
+
+<style>
+	form{
+    	max-width:500px;
+    	margin:25px auto;
+    	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+	
+</style>
