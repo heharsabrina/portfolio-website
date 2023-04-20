@@ -10,11 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.2.3",
+    "@astrojs/svelte": "^2.1.0",
+    "astro": "^2.3.0",
     "astro-icon": "^0.8.0",
+    "icons": "^1.0.0",
     "sass": "^1.62.0",
     "scss": "^0.2.4",
-    "simple-icons": "^8.10.0"
+    "simple-icons": "^8.10.0",
+    "svelte": "^3.58.0"
   },
   "devDependencies": {
     "accessible-astro-components": "^1.6.6",
