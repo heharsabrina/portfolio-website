@@ -4,6 +4,7 @@ import ThemeToggle from './ThemeToggle.astro';
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
+	{ label: 'Home', href: '/' },
 	{ label: 'About', href: '/about' },
 	{ label: 'Projects', href: '/projects/' },
 	{ label: 'Contact', href: '/contact/' },
@@ -192,25 +193,6 @@ const textLinks: { label: string; href: string }[] = [
 		box-shadow: var(--shadow-lg);
 	}
 
-	.socials {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.625rem;
-		font-size: var(--icon-size);
-	}
-
-	.social {
-		display: flex;
-		padding: var(--icon-padding);
-		text-decoration: none;
-		color: var(--accent-dark);
-		transition: color var(--theme-transition);
-	}
-
-	.social:hover,
-	.social:focus {
-		color: var(--accent-text-over);
-	}
 
 	.theme-toggle {
 		display: flex;
@@ -286,9 +268,7 @@ const textLinks: { label: string; href: string }[] = [
 			box-shadow: none;
 		}
 
-		.socials {
-			display: none;
-		}
+		
 	}
 
 	@media (min-width: 60em) {
