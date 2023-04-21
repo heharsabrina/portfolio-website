@@ -1,7 +1,7 @@
 ---
 title: Portfolio Website with Astro
 publishDate: 2023-04-21 00:00:00
-img: /assets/stock-1.jpg
+img: /assets/stock-2.jpg
 img_alt: A glimpse of the FOSS webpage
 description: |
   Sabrina Hehar's Portfolio Website
