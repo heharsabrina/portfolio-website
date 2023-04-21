@@ -71,41 +71,11 @@ const projects = (await getCollection('work')).sort(
       </div>
 	  
       <div>
-        <button type='submit'>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            class='icon icon-tabler icon-tabler-send'
-            width='171'
-            height='37'
-            viewBox='0 0 24 24'
-            stroke-width='2'
-            stroke='currentColor'
-            fill='none'
-            stroke-linecap='round'
-            stroke-linejoin='round'
-          >
-            <path stroke='none' d='M0 0h24v24H0z' fill='none' ></path>
-            <line x1='10' y1='14' x2='21' y2='3'></line>
-            <path d='M21 3l-6.5 18a0.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a0.55 .55 0 0 1 0 -1l18 -6.5' ></path>
-          </svg> Send
+        <button type='submit' class="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="171" height="37" fill="#000000" viewBox="0 0 256 256"><path d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.42,29.84l85.62,40.55,40.55,85.62A15.86,15.86,0,0,0,157.74,248q.69,0,1.38-.06a15.88,15.88,0,0,0,14-11.51l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68ZM157.83,231.85l-.05.14L118.42,148.9l47.24-47.25a8,8,0,0,0-11.31-11.31L107.1,137.58,24,98.22l.14,0L216,40Z"></path></svg> Send
         </button>
-        <button type='reset' class='gap-1 btn text-slate-300'>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            class='icon icon-tabler icon-tabler-eraser'
-            width='171'
-            height='37'
-            viewBox='0 0 24 24'
-            stroke-width='2'
-            stroke='currentColor'
-            fill='none'
-            stroke-linecap='round'
-            stroke-linejoin='round'
-          >
-            <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
-            <path d='M19 19h-11l-4 -4a1 1 0 0 1 0 -1.41l10 -10a1 1 0 0 1 1.41 0l5 5a1 1 0 0 1 0 1.41l-9 9'></path>
-            <line x1='18' y1='12.3' x2='11.7' y2='6'></line>
-          </svg> Clear
+        <button type='reset' class="reset">
+          <svg xmlns="http://www.w3.org/2000/svg" width="172" height="37" fill="#000000" viewBox="0 0 256 256"><path d="M235.5,216.81c-22.56-11-35.5-34.58-35.5-64.8V134.73a15.94,15.94,0,0,0-10.09-14.87L165,110a8,8,0,0,1-4.48-10.34l21.32-53a28,28,0,0,0-16.1-37,28.14,28.14,0,0,0-35.82,16,.61.61,0,0,0,0,.12L108.9,79a8,8,0,0,1-10.37,4.49L73.11,73.14A15.89,15.89,0,0,0,55.74,76.8C34.68,98.45,24,123.75,24,152a111.45,111.45,0,0,0,31.18,77.53A8,8,0,0,0,61,232H232a8,8,0,0,0,3.5-15.19ZM67.14,88l25.41,10.3a24,24,0,0,0,31.23-13.45l21-53c2.56-6.11,9.47-9.27,15.43-7a12,12,0,0,1,6.88,15.92L145.69,93.76a24,24,0,0,0,13.43,31.14L184,134.73V152c0,.33,0,.66,0,1L55.77,101.71A108.84,108.84,0,0,1,67.14,88Zm48,128a87.53,87.53,0,0,1-24.34-42,8,8,0,0,0-15.49,4,105.16,105.16,0,0,0,18.36,38H64.44A95.54,95.54,0,0,1,40,152a85.9,85.9,0,0,1,7.73-36.29l137.8,55.12c3,18,10.56,33.48,21.89,45.16Z"></path></svg> Clear
         </button>
       </div>
     </form>
@@ -139,13 +109,25 @@ const projects = (await getCollection('work')).sort(
     font-family: var(--font-body);
     font-size: var(--text-xl);
 	}
+  .submit {
+    border: 2px solid white;
+    background-color: #ffffff;
+    font-family: var(--font-body);
+    font-size: small;
+  }
+  .reset {
+    border: 2px solid white;
+    background-color: #ffffff;
+    font-family: var(--font-body);
+    font-size: small;
+  }
   input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    border-bottom: 3px solid rgb(0, 0, 0);
+    border-bottom: 3.5px solid var(--accent-regular);
     font-size: 16px;
   }
   input[type="text"]:focus {
@@ -157,7 +139,7 @@ const projects = (await getCollection('work')).sort(
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    border-bottom: 3px solid rgb(0, 0, 0);
+    border-bottom: 3.5px solid var(--accent-regular);
     font-size: 16px;
     margin-bottom: 17px;
   }
@@ -170,7 +152,7 @@ const projects = (await getCollection('work')).sort(
     padding: 12px 20px;
     box-sizing: border-box;
     border: none;
-    border-bottom: 3px solid #000000;
+    border-bottom: 3.5px solid var(--accent-regular);
     background-color: #ffffff;
     font-size: 16px;
     resize: none;
